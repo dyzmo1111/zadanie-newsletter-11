@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 class Runner {
 	public static void main(String[] args) {
-
+		// Dostêp do nazwy klasy Tricky poprzez konsolê
 		System.out.println("Nazwa klasy: ");
 		Scanner scanner = new Scanner(System.in);
 		String className = scanner.next();
@@ -18,7 +18,8 @@ class Runner {
 
 		String packageName = Runner.class.getPackage().getName();
 		String path = packageName + "." + className;
-
+		
+		//Wywo³anie konstruktora z wykorzystaniem mechanizmu rekleksji
 		try {
 			Class<?> cl = Class.forName(path);
 			Constructor<?> cons = cl.getDeclaredConstructors()[0];
